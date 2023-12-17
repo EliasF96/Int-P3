@@ -1,0 +1,342 @@
+//HEADER
+header {
+    .navBarDesktop {
+        z-index: 1;
+        position: fixed;
+        margin-top: -100px;
+        width: 100vw;
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        grid-column-gap: 100px;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+        background-color: rgb(0, 0, 0, .85);
+
+        //LOGO TEXTO
+        .mark {
+            font-style: italic;
+            width: 150px;
+            text-align: center;
+            border-radius: 25px;
+            font-family: 'Lucida Sans';
+            color: orange
+        }
+
+        //BARRA DE NAVEGACION
+
+        .list {
+            list-style: none;
+            display: flex;
+            align-items: center;
+
+            li {
+                margin: 10px;
+                font-size: 25px;
+            }
+
+            a {
+                text-decoration: none;
+                color: rgb(255, 242, 0);
+            }
+        }
+
+        //BUSCADOR OCULTO
+        .searchContainer {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            align-self: center;
+
+            .searchInput {
+                font-style: italic;
+                outline: none;
+                transition: all .5s;
+                border: none;
+                width: 100px;
+                opacity: 100;
+
+            }
+        }
+
+        //CARRITO
+        .cartButtonContainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            .cartIcon {
+                font-size: 25px;
+                color: yellow;
+                cursor: pointer;
+            }
+
+            .cartIcon:hover {
+                color: green;
+            }
+
+            p {
+                position: relative;
+                font-size: 30px;
+                left: 5px;
+                color: yellow
+            }
+        }
+    }
+}
+
+.responsiveNavBar {
+    display: none;
+}
+
+//CART WINDOW
+.cartContainer {
+    position: fixed;
+    transform: translateY(-1000px);
+    width: 650px;
+    padding: 0;
+    max-height: 500px;
+    display: inline;
+    z-index: 10;
+    overflow-y: auto;
+    margin: auto auto;
+    transition: all 1s;
+    left: 0px;
+    right: 0px;
+    background-color: #111;
+    border: green 5px inset;
+    h1 {
+        color: yellow;
+    }
+
+    li,ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .productCardBuy {
+        width: 100%;
+        padding: 0;
+
+        .card-body {
+            border-bottom: black 1px solid;
+            display: grid;
+            grid-template-columns: repeat(6, auto);
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+            width: 100%;
+            padding: 0
+        }
+
+        p,
+        img,
+        h1,
+        button {
+            border-left: 2px solid grey;
+            align-self: center;
+            color: #333;
+            font-size: 25px;
+            padding: 10px;
+        }
+    }
+
+    img {
+        min-width: 75px;
+        max-height: 75px;
+    }
+
+    .listTitleContainer {
+        display: flex;
+
+        .XIcon {
+            font-size: 40px;
+            color: yellow;
+            background-color: #222;
+            align-self: center;
+            justify-self: center;
+            cursor: pointer;
+        }
+
+        .XIcon:hover {
+            color: red;
+        }
+
+        h1 {
+            width: 95%;
+            text-align: center;
+            background-color: #222;
+            color: #888;
+            margin: 0;
+        }
+    }
+}
+
+.cartContainer.active {
+    transform: translateY(0px);
+}
+
+
+@media(max-width:426px) {
+    header {
+
+        //HIDDEN DESK NAV
+        .navBarDesktop {
+            display: none;
+        }
+
+        //ACTIVA RESPONSIVE MENU
+        .responsiveNavBar {
+            display: block;
+            position: absolute;
+            top: -250px;
+            background-color: rgba($color: black, $alpha: .85);
+            filter: drop-shadow(5px 10px 10px black);
+            z-index: 1;
+            transition: all .5s;
+
+            #responsiveMenuIcon {
+                color: red;
+                font-size: 25px;
+                width: auto;
+                position: relative;
+                bottom: -25px;
+                width: 100vw;
+                text-align: center;
+                background-color: #555;
+            }
+
+            .responsiveList {
+                padding: 0;
+                width: 200px;
+                margin: auto auto;
+
+                li {
+                    padding: 0;
+                    margin: 10px auto;
+                    width: 100%;
+                    text-align: center;
+                    list-style: none;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                }
+
+                li:nth-child(even) {
+                    background-color: #555;
+                }
+
+                li:nth-child(odd) {
+                    background-color: #666;
+                }
+
+            }
+
+            .responsiveCartButtonContainer {
+                text-align: center;
+                .cartIcon {
+                    font-size: 25px;
+                    color: yellow;
+                    cursor: pointer;
+                }
+
+                .cartIcon:hover {
+                    color: green;
+                }
+            }
+
+            .mark {
+                color: orange;
+                font-family: 'Lucida Sans';
+                text-align: center;
+                font-style: italic;
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        .responsiveNavBar.active {
+            top: 0px;
+        }
+
+    }
+
+    .cartContainer {
+        position: fixed;
+        transform: translateY(-1000px);
+        width: 150px;
+        max-height: 250px;
+        display: inline;
+        z-index: 10;
+        overflow-y: auto;
+        margin: auto auto;
+        transition: all 1s;
+        left: 0px;
+        right: 0px;
+        background-color: #111;
+        h1 {
+            color: yellow;
+        }
+    
+        li,ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+    
+        .productCardBuy {
+            .card-body {
+                border-bottom: black 1px solid;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                width: 100%;
+                padding: 0
+            }
+            p,h1 {
+                color: #333;
+                font-size: 20px;
+                width: 100%;
+                background-color: grey;
+                padding: 0;
+            }
+        }
+        button{
+            width: 100%;
+        }
+    
+        .listTitleContainer {
+            display: flex;
+    
+            .XIcon {
+                font-size: 40px;
+                color: yellow;
+                background-color: #222;
+                align-self: center;
+                justify-self: center;
+                cursor: pointer;
+            }
+    
+            .XIcon:hover {
+                color: red;
+            }
+    
+            h1 {
+                width: 95%;
+                text-align: center;
+                background-color: #222;
+                color: #888;
+                margin: 0;
+            }
+        }
+    }
+}
+
+//END HEADER

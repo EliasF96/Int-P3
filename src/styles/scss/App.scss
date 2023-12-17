@@ -1,0 +1,162 @@
+// @import '_html.scss'; 
+@import '_header.scss';
+@import '_footer.scss'; 
+
+
+.pictureContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .logoPrincipal{
+    width: auto;
+  }
+}
+
+body{
+  margin:100px auto;  
+  width: fit-content;
+  background-color: rgba($color: rgb(14, 67, 137), $alpha: .9);
+}
+
+:root{
+  background-image: url("https://th.bing.com/th/id/OIP.VoyCPZHsEvPe-W6x1GvtygHaHa?rs=1&pid=ImgDetMain");
+}
+.navBar{
+  background-color: #933838;
+  ul{
+    display: flex;
+  }
+  li{
+    color: yellow;
+    list-style: none;
+    margin: auto;
+  }
+  a {
+    color:black;
+    text-decoration: none;
+  }
+}
+
+.contactContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin:10px;
+  .contactCard{
+    text-align: center;
+  }
+  .maps{
+    width: 90vw; 
+    height: 250px;
+  }
+}
+
+/* OPEN POST FORM  */
+.formBody{
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.formWindowMenu{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  color: yellow;
+  svg{
+    font-size: 30px;
+  }
+  svg:hover{
+    color:red;
+  }
+}
+
+.formWindow{
+  position:fixed;
+  transform: translateY(-550px);
+  width: fit-content;
+  max-height: 500px;
+  justify-self: center;
+  align-self: center;
+  background-color: grey;
+  z-index: 10; 
+  overflow-x: hidden;
+  transition: all 1s;
+}
+.formWindow.open{
+  transform: translateY(100px);
+}
+//END FORM
+.home-subtittle,h1{
+  text-align: center;
+  color:#fff;
+  background-color: #111;
+}
+//CARDS
+.productList{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  height: fit-content;
+  li{
+    list-style: none;
+  }
+  
+  .largeDescContainer{
+      font-size: 12px;
+      width: 150px;
+      button{
+      margin: 0;
+      padding: 0; 
+      }
+  }
+  .productCard{
+    margin:5px;
+    .card-body{
+      color:rgb(255, 115, 0);
+      background-color: #262626;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    img{
+      width:150px;
+      background-color: grey; 
+    }
+    p{
+      margin:0px;
+      width: 100%; 
+      text-align: center;
+      color: rgb(147, 107, 56);
+    }
+    p:nth-of-type(even){
+      background-color: #000000;
+    }
+    p:nth-of-type(odd){
+      background-color: #262626;
+    }
+    p:nth-of-type(2){
+      font-size: 20px;
+      color:#0f0;
+    }
+    p:first-of-type{
+      color:yellow;
+      font-style: italic;
+    }
+    .accordion-body{
+      padding:0;
+    }
+  } 
+}
+
+.locationFrame{
+  width:100%;
+  height: 250px
+}
